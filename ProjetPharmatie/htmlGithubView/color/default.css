@@ -1,0 +1,120 @@
+/*
+#1 color = blue;
+#2 color = blue;
+*/
+
+a:hover,
+a:focus {
+    color: blue;
+}
+
+.circled {
+	background: blue;
+}
+
+.con1 > div, .con2 > div, .con3 > div { 
+	background-color: blue;
+}
+
+.scrollup:hover {
+	background: blue;
+}
+
+
+/* service */
+
+.service-icon span {
+	color: blue;
+}
+
+
+
+/* button */
+.btn-skin {
+  background-color: blue;
+  border-color: blue;
+}
+
+
+/* top */
+.top-area {
+	background: blue;
+}
+
+/* menu */
+
+.navbar-custom ul.nav ul.dropdown-menu li a:hover {
+	color: blue;
+}
+.navbar-custom.top-nav-collapse .nav li a:hover,
+.navbar-custom .nav li a:hover,
+.navbar-custom .nav li.active a,.navbar-custom.top-nav-collapse .nav li.active a  {
+    color: blue;
+}
+
+
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span {
+    background-color: blue;
+}
+
+
+.bg-skin {
+	background: blue;
+}
+
+.highlight-color {
+	background-color: blue;
+}
+.color {
+	color: blue;
+}
+
+/* pricing box  */
+.pricing-content.featured h2,.pricing-content.featured .price-bottom {
+	background-color:blue;
+}
+.pricing-content.featured h3 {
+	background:blue;
+}
+
+
+
+/* team */
+.cbp-l-grid-team-name {
+    color: blue;
+}
+
+.cbp-l-filters-button .cbp-filter-counter {
+	background-color: blue;
+}
+
+.cbp-l-filters-alignLeft .cbp-filter-item-active {
+    /* @editable properties */
+    background-color: blue;
+    border:1px solid blue;
+}
+
+.cbp-l-filters-dropdownWrap {
+    background: blue;
+}
+.cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active {
+    /* @editable properties */
+    background-color: blue;
+    border-color: blue;
+}
+.cbp-l-caption-buttonLeft,
+.cbp-l-caption-buttonRight {
+    /* @editable properties */
+    background-color: blue;
+}
+
+.cbp-l-caption-buttonLeft:hover,
+.cbp-l-caption-buttonRight:hover {
+    /* @editable properties */
+    background-color: blue;
+}
+
+.form-control:focus {
+  border-color: blue;
+}
