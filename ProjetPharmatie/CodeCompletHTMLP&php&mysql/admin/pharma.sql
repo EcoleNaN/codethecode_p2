@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  ven. 08 fév. 2019 à 12:25
+-- Généré le :  sam. 09 fév. 2019 à 00:37
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.3
 
@@ -34,10 +34,17 @@ CREATE TABLE `produits` (
   `apercu` varchar(255) NOT NULL,
   `date` datetime NOT NULL,
   `prix` int(255) NOT NULL,
-  `disponibilité` int(3) NOT NULL,
-  `pharamatie` varchar(255) NOT NULL,
+  `disponibilite` int(3) NOT NULL,
+  `pharmatie` varchar(255) NOT NULL,
   `idpharmatie` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `produits`
+--
+
+INSERT INTO `produits` (`id`, `produit`, `apercu`, `date`, `prix`, `disponibilite`, `pharmatie`, `idpharmatie`) VALUES
+(2, 'paracetamol', 'para.jpg', '2019-02-09 00:28:18', 1000, 1, 'meydeba', 1);
 
 -- --------------------------------------------------------
 
@@ -85,7 +92,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `produits`
 --
 ALTER TABLE `produits`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateur`
