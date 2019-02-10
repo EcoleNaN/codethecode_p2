@@ -23,7 +23,7 @@ if (isset($_POST)) {
         'idpharmatie'=>$_SESSION['id']
       ]);
       if ($ins2) {
-        $ins3=$bdd->prepare('SELECT * FROM produits WHERE pharmatie=:pharmatie');
+        $ins3=$bdd->prepare('SELECT * FROM produits WHERE pharmatie=:pharmatie AND id=(SELECT max(id) FROM produits)');
         $ins3->execute(['pharmatie'=>$_SESSION['nom']]);
         $rs=$ins3->fetch();
         $nouveauNom = $rs['id'].'_'.$rs['pharmatie'].'_'.$_FILES['image']['name'];

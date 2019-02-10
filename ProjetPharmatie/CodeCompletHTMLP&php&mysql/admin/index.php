@@ -189,7 +189,8 @@ html {
             <a class="dropdown-item" href="#">Paramètres</a>
             <a class="dropdown-item" href="#">Activités</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" onclick='son3()' href="#" data-toggle="modal" data-target="#logoutModal">Déconnection</a>
+            <a class="dropdown-item" onclick='son3()
+            ' href="#" data-toggle="modal" data-target="#logoutModal">Déconnection</a>
           </div>
         </li>
       </ul>
