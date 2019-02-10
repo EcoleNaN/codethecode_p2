@@ -112,11 +112,32 @@ html {
 
   </head>
 
-  <body id="page-top">
+  <body  id="page-top">
+    <?php
+    //message de bienvenue
+    $var=1;
+    $_SESSION['lecture']=$var; //création de la session temporaire, si la session lecturefin n'existe pas alors a chaque relaod, jouer le message sinon ne pas le faire
+    if (!isset($_SESSION['lecturefin']) && $_SESSION['lecture']==1) {
+        echo'<audio style="display:none" id="audio" autoplay src="sound/bienvenue.wav"></audio>';
+        $_SESSION['lecturefin']=1;
+      }
+    if ( isset($_SESSION['lecturefin']) && $_SESSION['lecturefin']==1) {
+        echo '';
+      }
+    //fin message de bienvenue
 
+    //selection de tout des données de garde utilisateur.
+
+    $dg=$bdd->prepare('SELECT * FROM utilisateur WHERE email=:email');
+    $dg->execute([
+      'email'=>$_SESSION['email']
+    ]);
+    $garde=$dg->fetch();
+    ?>
     <nav class="navbar navbar-expand   static-top">
 
-      <a class="navbar-brand mr-1" href="index.php">Pharmatie: <?= $_SESSION['nom'] ?></a>
+      <a class="navbar-brand mr-1" href="index.php"><?= $_SESSION['nom'] ?></a>
+       <a href="traitement4.php?id=<?= $garde['id'] ?>" class="btn <?php if($garde['garde']==0){ echo 'btn-danger';}else{ echo'btn-primary';} ?>"><?php if($garde['garde']==0){ echo 'pas de garde';}else{ echo 'de garde';} ?></a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -168,7 +189,7 @@ html {
             <a class="dropdown-item" href="#">Paramètres</a>
             <a class="dropdown-item" href="#">Activités</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Déconnection</a>
+            <a class="dropdown-item" onclick='son3()' href="#" data-toggle="modal" data-target="#logoutModal">Déconnection</a>
           </div>
         </li>
       </ul>
@@ -269,8 +290,9 @@ html {
             <div class="card-header">
               <i class="fas fa-table"></i>
               Médicaments 
-              <button href="#" data-toggle="modal" data-target="#addproduct" class="btn btn-primary"> Ajouter</button>
+              <button onclick='son()' href="#" data-toggle="modal" data-target="#addproduct" class="btn btn-primary"> Ajouter</button>
               </div>
+              
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -309,12 +331,12 @@ html {
                       <td><?= $reslt->date ?></td>
                       <td><?= $reslt->prix ?> Franc Cfa</td>
                       <td>
-                      <a title='cliquez pour changer' href="traitement2.php?idprod=<?= $reslt->id.'&amp;val='.$reslt->disponibilite ?>" role="button" class="btn <?php if($reslt->disponibilite == 1){ echo 'btn-success';}else{echo 'btn-danger';} ?>">
+                      <a onclick='son()' title='cliquez pour changer' href="traitement2.php?idprod=<?= $reslt->id.'&amp;val='.$reslt->disponibilite ?>" role="button" class="btn <?php if($reslt->disponibilite == 1){ echo 'btn-success';}else{echo 'btn-danger';} ?>">
                       <?php if($reslt->disponibilite == 1){ echo 'OUI';}else{echo 'NON';} ?>
                       </a>
                       </td>
                       <td>
-                      <a title='cliquez pour changer' href="traitement3.php?idprod=<?= $reslt->id ?>" role="button" class="btn btn-danger"><i class="fa fa-remove"></i>Supprimer</a>
+                      <a onclick='son()' title='cliquez pour supprimer' href="traitement3.php?idprod=<?= $reslt->id ?>" role="button" class="btn btn-danger"><i class="fa fa-remove"></i>Supprimer</a>
                       </td>
                     </tr>
                     <?php endforeach ?>
@@ -365,7 +387,7 @@ html {
           </div>
           <div class="modal-body">Sélectionnez "Déconnexion" ci-dessous si vous êtes prêt à mettre fin à votre session en cours.</div>
           <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+            <button onclick='son2()' class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
             <a class="btn btn-primary" href="logout.php">Déconnexion</a>
           </div>
         </div>
@@ -402,7 +424,7 @@ html {
           
         </div>
           <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+            <button onclick='son2()' class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
             <input type="submit" class="btn btn-primary" value="Ajouter">
           </div>
           </form>
@@ -428,6 +450,7 @@ html {
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/audio.js"></script>
 
   </body>
 
