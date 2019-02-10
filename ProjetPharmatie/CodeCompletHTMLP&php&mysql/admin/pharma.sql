@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  Dim 10 fév. 2019 à 02:13
+-- Généré le :  Dim 10 fév. 2019 à 13:01
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.3
 
@@ -44,7 +44,9 @@ CREATE TABLE `produits` (
 --
 
 INSERT INTO `produits` (`id`, `produit`, `apercu`, `date`, `prix`, `disponibilite`, `pharmatie`, `idpharmatie`) VALUES
-(2, 'paracetamol', 'para.jpg', '2019-02-09 00:28:18', 1000, 1, 'meydeba', 1);
+(1, 'Paracétamol', 'para.jpg', '2019-02-10 12:57:57', 1000, 1, 'meydeba', 1),
+(2, 'Arthémeter+luméfantrine', 'artemether.jpg', '2019-02-10 12:58:18', 2675, 1, 'meydeba', 1),
+(3, 'Vermox', 'vermox.jpg', '2019-02-10 12:58:41', 565, 1, 'meydeba', 1);
 
 -- --------------------------------------------------------
 
@@ -67,7 +69,7 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id`, `nom`, `localite`, `email`, `password`, `date`, `garde`) VALUES
-(1, 'meydeba', 'anyama', 'popo@gmail.com', '88545563', '2019-02-08 10:58:36', 0);
+(1, 'meydeba', 'anyama', 'popo@gmail.com', '88545563', '2019-02-08 10:58:36', 1);
 
 --
 -- Index pour les tables déchargées
@@ -93,7 +95,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `produits`
 --
 ALTER TABLE `produits`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateur`
