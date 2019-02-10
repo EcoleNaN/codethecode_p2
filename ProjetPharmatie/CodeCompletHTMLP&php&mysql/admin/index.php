@@ -163,10 +163,10 @@ html {
             <span class="badge badge-danger">9+</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-            <a class="dropdown-item" href="#">Notif1</a>
-            <a class="dropdown-item" href="#">Notif2</a>
+            <a class="dropdown-item" href="notification.html">Notif1</a>
+            <a class="dropdown-item" href="notification.html">Notif2</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Voir tous</a>
+            <a class="dropdown-item" href="notification.html">Voir tous</a>
           </div>
         </li>
         <li class="nav-item dropdown no-arrow mx-1">
@@ -175,8 +175,8 @@ html {
             <span class="badge badge-danger">7</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-            <a class="dropdown-item" href="#">Danielle</a>
-            <a class="dropdown-item" href="#">Nicole</a>
+            <a class="dropdown-item" href="messages.html">Danielle</a>
+            <a class="dropdown-item" href="messages.html">Nicole</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Lire tous</a>
           </div>
@@ -186,8 +186,8 @@ html {
             <i class="fas fa-user-circle fa-fw"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#">Paramètres</a>
-            <a class="dropdown-item" href="#">Activités</a>
+            <a class="dropdown-item" href="parametres.html">Paramètres</a>
+            <a class="dropdown-item" href="activites.html">Activités</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" onclick='son3()
             ' href="#" data-toggle="modal" data-target="#logoutModal">Déconnection</a>
