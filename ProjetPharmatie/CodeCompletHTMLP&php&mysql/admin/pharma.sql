@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  sam. 09 fév. 2019 à 00:37
+-- Généré le :  Dim 10 fév. 2019 à 02:13
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.3
 
@@ -58,15 +58,16 @@ CREATE TABLE `utilisateur` (
   `localite` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `garde` int(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`id`, `nom`, `localite`, `email`, `password`, `date`) VALUES
-(1, 'meydeba', 'anyama', 'popo@gmail.com', '88545563', '2019-02-08 10:58:36');
+INSERT INTO `utilisateur` (`id`, `nom`, `localite`, `email`, `password`, `date`, `garde`) VALUES
+(1, 'meydeba', 'anyama', 'popo@gmail.com', '88545563', '2019-02-08 10:58:36', 0);
 
 --
 -- Index pour les tables déchargées
