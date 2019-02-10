@@ -112,7 +112,7 @@ html {
 
   </head>
 
-  <body  id="page-top">
+  <body style="background-color:#000;"  id="page-top">
     <?php
     //message de bienvenue
     $var=1;
